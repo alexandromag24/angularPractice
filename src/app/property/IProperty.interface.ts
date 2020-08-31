@@ -1,8 +1,8 @@
 export interface IProperty {
-    Id: number;
-    Name: string;
-    Type: string;
-    Price: number;
+    id: number;
+    name: string;
+    type: string;
+    price: number;
 
 }
 
