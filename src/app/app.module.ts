@@ -9,6 +9,7 @@ import { PropertyListComponent } from './property/property-list/property-list.co
 import { ServiceService } from './services/service.service';
 import { AddPropertyComponent } from './property/add-property/add-property.component';
 import { PropertyDetailComponent } from './property/property-detail/property-detail.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { PropertyDetailComponent } from './property/property-detail/property-det
   imports: [
     HttpClientModule,
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [

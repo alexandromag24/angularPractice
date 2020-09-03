@@ -1,8 +1,13 @@
 <div class="row">
-    <div *ngIf="!properties">
-        ... loading
+
+    <div *ngIf="!properties">... loading</div>
+
+    <div *ngFor="let property of properties" class="col-lg-4 col-sm-6">
+
+            <div class="shadow-lg p-3 mb-3 bg-white rounded">
+                <app-property-card [property]="property"></app-property-card>
+            </div>
+
     </div>
-    <div *ngFor="let property of properties" class="shadow-lg col-sm-4 p-3">
-        <app-property-card [property]="property"></app-property-card>
-    </div> 
+
 </div>
