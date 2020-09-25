@@ -19,7 +19,6 @@ export class AddPropertyComponent implements OnInit {
   furnishTypes: Array<string> = ['Fully', 'Semi', 'Unfurnished']
   model: NgbDateStruct;
   today = this.calendar.getToday();
-
   propertyView : IProperty = {
     id: null,
     name: '',
