@@ -17,9 +17,34 @@
         </li>
 
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+      <div>
+        <ul class="nav navbar-nav">
+          <li *ngIf="!loggedIn()" class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="/user-register">Register</a>
+          </li>
+          <li *ngIf="!loggedIn()" class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="/user-login">Login</a>
+          </li>
+
+          <li *ngIf="loggedIn()" class="nav-item">
+            <div class="row">
+              <div class="col">
+                <div ngbDropdown class="d-inline-block dropdown-menu-right">
+                  <a class="nav-link" routerLinkActive="active"  id="dropdownBasic1" ngbDropdownToggle>Welcome {{loggedinUser}}</a>
+                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+
+                    <a ngbDropdownItem>View Dashboard</a>
+                    <a ngbDropdownItem>My Profile</a>
+                    <a ngbDropdownItem>Change Password</a>
+                    <a ngbDropdownItem (click)="onLogout()">
+                      Logout</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>

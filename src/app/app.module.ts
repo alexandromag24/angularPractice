@@ -1,3 +1,6 @@
+import { AuthService } from 'src/app/services/auth.service';
+import { AlertifyService } from './services/alertify.service';
+import { UserServiceService } from './services/user-service.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -9,7 +12,14 @@ import { PropertyListComponent } from './property/property-list/property-list.co
 import { ServiceService } from './services/service.service';
 import { AddPropertyComponent } from './property/add-property/add-property.component';
 import { PropertyDetailComponent } from './property/property-detail/property-detail.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserLoginComponent } from './user/user-login/user-login.component';
+import { UserRegisterComponent } from './user/user-register/user-register.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+
+import {NgbNavModule, NgbTabsetModule, NgbButtonsModule, NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 @NgModule({
@@ -19,16 +29,28 @@ import { FormsModule } from '@angular/forms';
     PropertyCardComponent,
     PropertyListComponent,
     AddPropertyComponent,
-    PropertyDetailComponent
+    PropertyDetailComponent,
+    UserLoginComponent,
+    UserRegisterComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    ReactiveFormsModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    NgbDropdownModule,
+    NgbTabsetModule,
+    NgbNavModule,
+    NgbButtonsModule,
+    NgbDatepickerModule
   ],
   providers: [
-    ServiceService
+    ServiceService,
+    UserServiceService,
+    AlertifyService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
