@@ -15,6 +15,14 @@ export class AddPropertyComponent implements OnInit {
   @ViewChild('Form', {static: false}) addPropertyForm: NgForm;
   @ViewChild('formTabs', {static: false}) tabSet: NgbTabset;
   // Will come from masters
+  yes: string;
+  no: string;
+  East: string;
+  West: string;
+  South: string;
+  North: string;
+  sell: string;
+  active: string;
   propertyTypes: Array<string> = ['House', 'Apartment', 'Duplex']
   furnishTypes: Array<string> = ['Fully', 'Semi', 'Unfurnished']
   model: NgbDateStruct;
